@@ -1,0 +1,47 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Agervang</title>
+        <link rel="stylesheet" href="{% static 'vagtplan/styles.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    </head>
+    <body>
+        {% block navigation %}
+        <div class="nav-scroller bg-white shadow-sm">
+        <nav class="nav nav-underline">
+        <a class="nav-link active" href="#">Kalender</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ansatte
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Sarah</a>
+            <a class="dropdown-item" href="#">Joachim</a>
+            <a class="dropdown-item" href="#">Person3</a>
+        </div>
+        </li>
+        <a class="nav-link" href="#">Sammenlign</a>
+        </nav>
+        </div>
+        {% endblock %}
+        {% block body %}
+        <h1 id='Kristian'>Vagtplan</h1>
+            {% block calendar %}
+            {% endblock %}
+        {% endblock %}
+    </body>
+    {# Set of blocks that can be used to display JavaScript files #}
+    {% block footer_javascript %}
+    <script src="{% static 'vagtplan/script.js' %}" type="text/javascript"></script> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    {% endblock footer_javascript %}
+</html>
